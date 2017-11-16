@@ -7,6 +7,8 @@
 /// </summary>
 
 using Android.App;
+using Android.Views;
+using Android.Graphics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Screenshot_Plugin.SnapshotService))]
 namespace Screenshot_Plugin
@@ -18,7 +20,17 @@ namespace Screenshot_Plugin
     /// </summary>
     public class SnapshotService : ISnapShotService
     {
-        public void TakeScreenShot()
+
+        /// <summary>
+        ///  Method to take a screenshot,
+        ///  <para>View = View of which the screenshot will be taken. Null defaults to the root of current xamarin.forms </para>
+        ///  <para>Path = Path on the device where to save. Null defaults to root/pictures </para>
+        ///  <para>Imagename = Name of the image + extension ".png" </para>
+        /// </summary>
+        /// <param name="view"></param>
+        /// <param name="Path"></param>
+        /// <param name="Imagename"></param>
+        public void TakeScreenShot(View view = null)
         {
             var screenshotPath =
             Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
@@ -26,20 +38,20 @@ namespace Screenshot_Plugin
             "screenshot.png";
 
             var rootView = ((Activity)Xamarin.Forms.Forms.Context).Window.DecorView.RootView;
-            
-            using (var screenshot = Android.Graphics.Bitmap.CreateBitmap(
+
+            using (var screenshot = Bitmap.CreateBitmap(
                     rootView.Width,
                     rootView.Height,
-                    Android.Graphics.Bitmap.Config.Argb8888))
+                    Bitmap.Config.Argb8888))
             {
-                var canvas = new Android.Graphics.Canvas(screenshot);
+                var canvas = new Canvas(screenshot);
                 rootView.Draw(canvas);
 
                 using (var screenshotOutputStream = new System.IO.FileStream(
                             screenshotPath,
                             System.IO.FileMode.Create))
                 {
-                    screenshot.Compress(Android.Graphics.Bitmap.CompressFormat.Png, 90, screenshotOutputStream);
+                    screenshot.Compress(Bitmap.CompressFormat.Png, 90, screenshotOutputStream);
                     screenshotOutputStream.Flush();
                     screenshotOutputStream.Close();
                 }
