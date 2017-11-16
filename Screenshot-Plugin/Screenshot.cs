@@ -11,6 +11,7 @@ using Android.App;
 [assembly: Xamarin.Forms.Dependency(typeof(Screenshot_Plugin.SnapshotService))]
 namespace Screenshot_Plugin
 {
+
     /// <summary>
     /// Initializes a new instance of the <see cref="Screenshot"/> class.
     /// </summary>
