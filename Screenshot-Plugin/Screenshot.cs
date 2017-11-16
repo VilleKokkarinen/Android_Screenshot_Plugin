@@ -18,7 +18,7 @@ namespace Screenshot_Plugin
     public class SnapshotService : ISnapShotService
     {
         /// <summary>
-        /// Generate this service and call it to take a snapshot
+        /// Generate this service and call it to take a snapshot from the current view
         /// <para> Or call directly with: </para>
         /// DependencyService.Get&lt;ISnapShotService>().TakeSnapShot()
         /// </summary>
