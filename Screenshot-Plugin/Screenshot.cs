@@ -23,7 +23,7 @@ namespace Screenshot_Plugin
     public class SnapshotService : ISnapShotService
     {
         /// <summary>
-        /// 
+        /// You must enter this activity at your Mainactivity
         /// </summary>
         public static Activity Activity { get; set; }
 
@@ -55,6 +55,15 @@ namespace Screenshot_Plugin
         }
 
 
+        /// <summary>
+        /// Saves the file to your C: drive
+        /// </summary>
+        /// <param name="image"></param>
+        public void SaveToPC(byte[] image)
+        {
+            File.WriteAllBytes(Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
+                Java.IO.File.Separator + "image.png", image);
+        }
         /// <summary>
         /// Generate this service and call TakeSnapShot to take a snapshot from the current view
         /// <para> Or call directly with: </para>
