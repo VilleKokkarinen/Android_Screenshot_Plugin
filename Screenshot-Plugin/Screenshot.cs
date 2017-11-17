@@ -8,6 +8,7 @@
 using Android.App;
 using Android.Views;
 using Android.Graphics;
+using System.Diagnostics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Screenshot_Plugin.SnapshotService))]
 namespace Screenshot_Plugin
@@ -44,6 +45,10 @@ namespace Screenshot_Plugin
                 path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
                 Java.IO.File.Separator + Imagename;                
             }
+
+            Debug.WriteLine("\nTook a snapshot.\n" +
+               "Picture was saved to +" + path + ".\n" +
+               "Picture was taken from the view " + view);
 
             using (var screenshot = Bitmap.CreateBitmap(
                     view.Width,
