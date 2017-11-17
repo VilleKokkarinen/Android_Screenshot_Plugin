@@ -1,5 +1,6 @@
 ﻿using Android.Views;
 using Android.Graphics;
+using System.Threading.Tasks;
 
 namespace Screenshot_Plugin
 {
@@ -9,7 +10,13 @@ namespace Screenshot_Plugin
     public interface ISnapShotService
     {
         /// <summary>
-        ///  Method to take a screenshot.              
+        /// Returns current screen as a byte[] (image), doesn't save it.
+        /// </summary>
+        /// <returns></returns>
+       byte[] CurrentScreenBytes();
+
+        /// <summary>
+        ///  Method to take a screenshot and save to device.             
         ///  <para>View = View of which the screenshot will be taken. Null defaults to the root of current xamarin.forms </para>
         ///  <para>   Path = Path on the device where to save. Null defaults to root/pictures </para>
         ///  <para>Imagename = Name for Screenshot file + extension ".png" / ".jpeg" / ".jpg" </para>
@@ -17,6 +24,6 @@ namespace Screenshot_Plugin
         /// <param name="view"></param>
         /// <param name="path"></param>
         /// <param name="Imagename"></param>
-        void TakeSnapShot(View view = null, string path = null, string Imagename = null);        
+        void SaveCurrentScreenToDevice(View view = null, string path = null, string Imagename = null);        
     }
 }
