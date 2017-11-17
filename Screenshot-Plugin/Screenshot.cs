@@ -8,7 +8,6 @@
 using Android.App;
 using Android.Views;
 using Android.Graphics;
-using System.Diagnostics;
 
 [assembly: Xamarin.Forms.Dependency(typeof(Screenshot_Plugin.SnapshotService))]
 namespace Screenshot_Plugin
@@ -19,7 +18,7 @@ namespace Screenshot_Plugin
     public class SnapshotService : ISnapShotService
     {
         /// <summary>
-        /// Generate this service and call it to take a snapshot from the current view
+        /// Generate this service and call TakeSnapShot to take a snapshot from the current view
         /// <para> Or call directly with: </para>
         /// DependencyService.Get&lt;ISnapShotService>().TakeSnapShot()
         /// </summary>
@@ -42,22 +41,21 @@ namespace Screenshot_Plugin
 
             if (path == null)
             {
+                // (Root)/Pictures/Image.png
                 path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
                 Java.IO.File.Separator + Imagename;                
             }
-
-            Debug.WriteLine("\nTook a snapshot.\n" +
-               "Picture was saved to +" + path + ".\n" +
-               "Picture was taken from the view " + view);
-
+             
+            //Creates a bitmap of the current view
             using (var screenshot = Bitmap.CreateBitmap(
                     view.Width,
                     view.Height,
                     Bitmap.Config.Argb8888))
             {
+                //Draws a canvas of the current screen
                 var canvas = new Canvas(screenshot);
                 view.Draw(canvas);
-
+                
                 using (var screenshotOutputStream = new System.IO.FileStream(path, System.IO.FileMode.Create))
                 {
                     screenshot.Compress(Bitmap.CompressFormat.Png, 90, screenshotOutputStream);
