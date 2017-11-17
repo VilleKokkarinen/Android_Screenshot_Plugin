@@ -45,7 +45,7 @@ namespace Screenshot_Plugin
                 path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
                 Java.IO.File.Separator + Imagename;                
             }
-             
+            
             //Creates a bitmap of the current view
             using (var screenshot = Bitmap.CreateBitmap(
                     view.Width,
