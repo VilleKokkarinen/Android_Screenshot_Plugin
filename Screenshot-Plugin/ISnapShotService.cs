@@ -13,7 +13,7 @@ namespace Screenshot_Plugin
         /// Returns current screen as a byte[] (image), doesn't save it.
         /// </summary>
         /// <returns></returns>
-       byte[] CurrentScreenBytes();
+       byte[] CurrentScreenBytes(View view = null);
 
         /// <summary>
         /// Saves the file to your C:/image.png
