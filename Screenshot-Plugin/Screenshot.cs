@@ -59,8 +59,7 @@ namespace Screenshot_Plugin
         /// </summary>
         /// <param name="image"></param>
         public void SaveToPC(byte[] image)
-        {
-            
+        {           
         }
 
 
