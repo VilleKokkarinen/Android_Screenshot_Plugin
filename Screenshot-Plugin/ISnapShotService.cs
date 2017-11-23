@@ -9,11 +9,13 @@ namespace Screenshot_Plugin
     /// </summary>
     public interface ISnapShotService
     {
+        
+
         /// <summary>
         /// Returns current screen as a byte[] (image), doesn't save it.
         /// </summary>
         /// <returns></returns>
-       byte[] CurrentScreenBytes(View view = null);
+        byte[] CurrentScreenBytes(View view = null);
 
         /// <summary>
         /// Saves the file to your C:/image.png

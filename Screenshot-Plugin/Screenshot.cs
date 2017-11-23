@@ -18,8 +18,7 @@ namespace Screenshot_Plugin
     /// Initializes a new instance of the <see cref="SnapshotService"/> class.
     /// </summary>
     public class SnapshotService : ISnapShotService
-    {
-       
+    {      
         /// <summary>
         /// Returns bytes of current screen for further processing
         /// </summary>
