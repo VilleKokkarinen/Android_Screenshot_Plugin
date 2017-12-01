@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ADB_Screenshot
+namespace Kokkarinen.Screenshot.Plugin
 {
     public class ScreenCapture
     {

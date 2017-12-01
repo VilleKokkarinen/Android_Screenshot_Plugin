@@ -6,7 +6,7 @@ using System.Reflection;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 
-namespace ADB_Screenshot
+namespace Kokkarinen.Screenshot.Plugin
 {
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class |
                  AttributeTargets.Interface | AttributeTargets.Assembly,
