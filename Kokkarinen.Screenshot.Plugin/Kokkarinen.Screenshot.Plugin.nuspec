@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Kokkarinen.Screenshot.Plugin</id>
+    <version>1.3</version>
+    <title>$title$</title>
+    <authors>Ville Kokkarinen</authors>
+    <owners>Ville Kokkarinen</owners>   
+    <description>Nuget package for taking screenshots over ADB bridge in Xamarin tests</description>
+    <releaseNotes>Release 1.3</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags></tags>
+  </metadata>
+</package>
