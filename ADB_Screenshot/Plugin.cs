@@ -11,9 +11,9 @@ namespace ADB_Screenshot
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class |
                  AttributeTargets.Interface | AttributeTargets.Assembly,
                  AllowMultiple = true)]
-    public class ConsoleActionAttribute : Attribute, ITestAction
+    public class ScreenshotAttributeAttribute : Attribute, ITestAction
     {      
-        public ConsoleActionAttribute() {}
+        public ScreenshotAttributeAttribute() {}
 
         public void BeforeTest(ITest test)
         {
