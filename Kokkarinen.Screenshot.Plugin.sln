@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ADB_Screenshot", "ADB_Screenshot\ADB_Screenshot.csproj", "{35AEA975-043E-4907-BB3B-89BFFA2C60B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kokkarinen.Screenshot.Plugin", "ADB_Screenshot\Kokkarinen.Screenshot.Plugin.csproj", "{35AEA975-043E-4907-BB3B-89BFFA2C60B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Android_Screenshot-Plugin", "Screenshot-Plugin\Android_Screenshot-Plugin.csproj", "{8B5B3E94-28E4-460D-863D-2D6DB5259C2C}"
 EndProject

@@ -7,8 +7,8 @@
     <ProjectGuid>{35AEA975-043E-4907-BB3B-89BFFA2C60B1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ADB_Screenshot</RootNamespace>
-    <AssemblyName>ADB_Screenshot</AssemblyName>
+    <RootNamespace>Kokkarinen.Screenshot.Plugin</RootNamespace>
+    <AssemblyName>Kokkarinen.Screenshot.Plugin</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
