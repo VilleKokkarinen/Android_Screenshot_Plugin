@@ -51,45 +51,7 @@ namespace Screenshot_Plugin
             }            
         }
 
-
-        /// <summary>
-        /// CURRENTLY NOT IMPLEMENTED
-        /// <para>Saves the file to your computer</para>
-        /// </summary>
-        /// <param name="image"></param>
-        public void SaveToPC(byte[] image)
-        {           
-            var  view = ((Activity)Xamarin.Forms.Forms.Context).Window.DecorView.RootView;
-
-            
-
-            // Path => (Root)/Pictures/Image.png
-            var path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
-            Java.IO.File.Separator + "Screenshot.png";
-            
-
-            //Creates a bitmap of the current view
-            using (var screenshot = Bitmap.CreateBitmap(
-                    view.Width,
-                    view.Height,
-                    Bitmap.Config.Argb8888))
-            {
-                //Draws a canvas of the current screen
-                var canvas = new Canvas(screenshot);
-                view.Draw(canvas);
-
-                //Compresses the screenshot and saves it to the device
-                using (var screenshotOutputStream = new System.IO.FileStream(path, System.IO.FileMode.Create))
-                {
-                    screenshot.Compress(Bitmap.CompressFormat.Png, 90, screenshotOutputStream);
-                    screenshotOutputStream.Flush();
-                }
-            }
-        }
-
-
-
-
+        
         /// <summary>
         /// Generate a SnapShotService and call TakeSnapShot to take a snapshot from the current view
         /// <para> Or call directly with: </para>
@@ -106,21 +68,18 @@ namespace Screenshot_Plugin
         /// <param name="view"></param>
         /// <param name="path"></param>
         /// <param name="Imagename"></param>
-        public void SaveCurrentScreenToDevice(View view = null, string path=null, string Imagename=null)
+        public void SaveScreenShot(View view = null, string path=null, string Imagename=null)
         {
-            if (view == null)
-            {
-                view = ((Activity)Xamarin.Forms.Forms.Context).Window.DecorView.RootView;
-               
-            }
-                
+            if (view == null)            
+                view = ((Activity)Xamarin.Forms.Forms.Context).Window.DecorView.RootView;               
+                            
             
             if (path == null)
-            {               
-                // Path => (Root)/Pictures/Image.png
-                path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath +
-                Java.IO.File.Separator + Imagename;                
-            }
+                path = Android.OS.Environment.GetExternalStoragePublicDirectory("Pictures").AbsolutePath + Java.IO.File.Separator;                
+            
+
+            if (Imagename == null)
+                Imagename = "Screenshot.png";
 
             //Creates a bitmap of the current view
             using (var screenshot = Bitmap.CreateBitmap(
@@ -133,12 +92,13 @@ namespace Screenshot_Plugin
                 view.Draw(canvas);
 
                 //Compresses the screenshot and saves it to the device
-                using (var screenshotOutputStream = new System.IO.FileStream(path, System.IO.FileMode.Create))
+                using (var screenshotOutputStream = new System.IO.FileStream(path+Imagename, System.IO.FileMode.Create))
                 {
                     screenshot.Compress(Bitmap.CompressFormat.Png, 90, screenshotOutputStream);
                     screenshotOutputStream.Flush();                   
                 }
-            }
+            }                       
+           
         }
     }
 }
