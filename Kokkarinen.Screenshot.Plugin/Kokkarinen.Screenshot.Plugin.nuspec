@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>Kokkarinen.Screenshot.Plugin</id>
-    <version>2.0.0.1</version>
+    <version>2.6.4.1</version>
     <title>$title$</title>
     <authors>Ville Kokkarinen</authors>
     <owners>Ville Kokkarinen</owners>   
-    <description>Nuget package for taking screenshots over ADB bridge in Xamarin tests | Nunit 2.6.4 Version </description>
-    <releaseNotes>2.0.0.1</releaseNotes>
+    <description>Stable Release | Nuget package for taking screenshots over ADB bridge in Xamarin tests | Nunit 2.6.4 Version </description>
+    <releaseNotes>2.6.4.1</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags></tags>
   </metadata>

@@ -22,12 +22,12 @@ namespace Kokkarinen.Screenshot.Plugin
                 if (!System.IO.Directory.Exists("Screenshots"))
                     System.IO.Directory.CreateDirectory("Screenshots");
 
-                Process Take_ADB_Screenshot = new Process();
-                Take_ADB_Screenshot.StartInfo.FileName = "CMD.exe";              
-                Take_ADB_Screenshot.StartInfo.Arguments =
-                    "/c C:/Program Files (x86)/Jenkins/tools/android-sdk/platform-tools/adb shell screencap -p " + PathInDevice + Name
-                    + " && C:/Program Files (x86)/Jenkins/tools/android-sdk/platform-tools/adb pull " + PathInDevice + Name + " Screenshots/" + Name;
+                string argument = "/c C:\\\"Program Files (x86)\"/Jenkins/tools/android-sdk/platform-tools/adb shell screencap -p " + PathInDevice + Name +
+                    " &&  C:\\\"Program Files (x86)\"/Jenkins/tools/android-sdk/platform-tools/adb pull " + PathInDevice + Name + " Screenshots/" + Name;
 
+                Process Take_ADB_Screenshot = new Process();
+                Take_ADB_Screenshot.StartInfo.FileName = "CMD.exe";
+                Take_ADB_Screenshot.StartInfo.Arguments = argument;
                 Take_ADB_Screenshot.Start();
                 Take_ADB_Screenshot.Dispose();           
         }

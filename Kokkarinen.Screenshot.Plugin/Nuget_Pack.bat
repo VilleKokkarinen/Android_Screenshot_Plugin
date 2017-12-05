@@ -1,0 +1,1 @@
+c:\users\kokkarinen\Source\repos\Xamarin_Screenshot_Plugin\Xamarin_Screenshot_Plugin\Kokkarinen.Screenshot.Plugin\Nuget pack Kokkarinen.Screenshot.Plugin.csproj
